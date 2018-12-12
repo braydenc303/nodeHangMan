@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/braydenc303/nodeHangMan/issues"
   },
-  "homepage": "https://github.com/braydenc303/nodeHangMan#readme"
+  "homepage": "https://github.com/braydenc303/nodeHangMan#readme",
+  "dependencies": {
+    "inquirer": "^6.2.0"
+  }
 }
