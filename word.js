@@ -54,4 +54,7 @@ module.exports = Word;
 // console.log(word.showString());
 // word.test("l");
 // console.log(word.showString());
+// word.test("h");
+// console.log(word.showString());
+
 
