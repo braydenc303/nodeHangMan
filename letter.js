@@ -20,8 +20,6 @@ Letter.prototype.toString = function() {
 Letter.prototype.check = function(char) {
     if(char === this.ltr) {
         this.guessed = true;
-    } else {
-        this.guessed = false;
     }
 };
 
