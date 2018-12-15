@@ -1,5 +1,6 @@
 # nodeHangMan
 A command line version of a Hang Man game.
+I currently have it working properly workflow wise, I would however like to prevent the ability to guess the same letter more than once, and perhaps ask the user if they would like to continue playing between rounds.
 
 ### Instructions
 <!-- Done -->
