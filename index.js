@@ -62,8 +62,9 @@ currentWord();
 ask();
 
 function ask(){
-    console.log("ask something");
-    console.log(secretWord);
+    // console.log("ask something");
+    // console.log(secretWord);
+    console.log("FIFTH ELEMENT WORD GUESS");
     console.log(word.showString()+"\n");
     console.log(`Score: ${score} | Guesses remaining: ${guesses} | Letters Guessed: ${incorrect}`);
     inquirer
@@ -79,7 +80,7 @@ function ask(){
                 //Change the user guess to uppercase.
                 var guess = inquirerResponse.guess.toUpperCase();
                 //Display the current word to make testing easier.
-                console.log(secretWord);
+                // console.log(secretWord);
                 //Test the guess against the current word.
                 var wordBefore = word.showString();
                 word.test(guess);
@@ -100,19 +101,20 @@ function ask(){
                 // console.log(`Score: ${score} | Guesses remaining: ${guesses} | Letters Guessed: ${incorrect}`);
 
                 //A check to see if all of the letters have been guessed. Most likely a for each loop to check each letter object to see if all of it's objects have a value of true. If so, add one to score and move on to the next word. This logic will be similar to what is used to determine if a bubble sort is finished.
-                console.log(complete);
-                console.log(word.letterObjs);
+                // console.log(complete);
+                // console.log(word.letterObjs);
                 for(i = 0; i < word.letterObjs.length; i++){
                     complete = true;
-                    console.log(word.letterObjs[i]);
+                    // console.log(word.letterObjs[i]);
                     if(word.letterObjs[i].guessed === false){
                         complete = false;
-                        console.log(complete);
+                        // console.log(complete);
                     }; 
                 };
-                console.log(word.letterObjs);
-                console.log(complete);
+                // console.log(word.letterObjs);
+                // console.log(complete);
                 if(complete){
+                    console.log("You guessed " + secretWord +"\n Try the next one.");
                     resetGame();
                 } else {
                     ask();
