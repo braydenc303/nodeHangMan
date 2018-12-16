@@ -72,7 +72,13 @@ function ask(){
                 {
                     type: "input",
                     message: "Enter the letter you would like to guess.",
-                    name: "guess"
+                    name: "guess",
+                    validate: function(guess){
+                        if(validGuesses.indexOf(guess)>=0){
+                            return true;
+                        }
+                        return false;
+                    }
                 }
             ])
             //In the .then:
@@ -81,6 +87,9 @@ function ask(){
                 var guess = inquirerResponse.guess.toUpperCase();
                 //Display the current word to make testing easier.
                 // console.log(secretWord);
+                console.log(validGuesses);
+                validGuesses.splice(validGuesses.indexOf(guess.toLowerCase()),1);
+                console.log(validGuesses);
                 //Test the guess against the current word.
                 var wordBefore = word.showString();
                 word.test(guess);
@@ -108,6 +117,7 @@ function ask(){
                     // console.log(word.letterObjs[i]);
                     if(word.letterObjs[i].guessed === false){
                         complete = false;
+                        break;
                         // console.log(complete);
                     }; 
                 };
@@ -115,7 +125,26 @@ function ask(){
                 // console.log(complete);
                 if(complete){
                     console.log("You guessed " + secretWord +"\n Try the next one.");
-                    resetGame();
+                    inquirer
+                        .prompt([
+                            {
+                                name: "continue",
+                                type: "list",
+                                message: "Play again, or exit?",
+                                choices: ["Continue", "Exit"]
+                            }
+                        ])
+                          .then (function(res){
+                              switch (res.continue) {
+                                case "Continue":
+                                    resetGame();
+                                    break;
+                                case "Exit":
+                                    console.log("Thanks For Playing")
+                                    return false;
+                              }
+                          })
+                    // resetGame();
                 } else {
                     ask();
                 };
