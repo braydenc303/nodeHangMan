@@ -1,11 +1,36 @@
 # nodeHangMan
+
 A command line version of a Hang Man game.
 
+I stuck with the same theme I used for the HTML version which was words from the movie, "The Fifth Element."
+Now that I have more knowledge of JavaScript I was able to create a better workflow and user experience. I may go back and attempt to enhance the HTML version in the future.
+
+![Index Gif](./index.gif)
+
+### Gameplay:
+
+* Run command to start game.
+
+* Display the spaces available in the current word(showString method) console log the current score and incorrect guesses remaining.
+
+* Prompt the user for their guess.
+
+* Check the letter and the word to see if has been guessed correctly.
+
+* If the word has not been fully guessed, re-display the spaces available and correct letters(showString method) console log the current score and incorrect guesses and prompt the user for their guess.
+
+* If the word has been guessed correctly add one to the players score. Prompt the user to determine if they would like to continue playing or exit the game. If they with to continue, reset the guesses remaining and valid guesses if used, display the spaces available for the next word, console log the current score and incorrect guesses and prompt the user for their guess.
+
+* If all of the words have been guessed, congratulate the user on a perfect round and end the game.
+
 ### Instructions
+
 <!-- Done -->
+
 1. Navigate to the root of your project and run `npm init -y` &mdash; this will initialize a `package.json` file for your project. The `package.json` file is required for installing third party npm packages and saving their version numbers. If you fail to initialize a `package.json` file, it will be troublesome, and at times almost impossible for anyone else to run your code after cloning your project.
 
 <!-- Done -->
+
 2. Make a `.gitignore` file and add the following lines to it. This will tell git not to track these files, and thus they won't be committed to Github.
 
 ```
@@ -14,7 +39,7 @@ node_modules
 .env
 ```
 
-# Advanced JavaScript Assignment: Constructor Word Guess
+## Advanced JavaScript Assignment: Constructor Word Guess
 
 ### Overview
 
